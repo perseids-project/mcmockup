@@ -13,9 +13,12 @@
       <div class="small-12 medium-8 columns full texts">
         <div class="row half">
           <div class="small-12 medium-6 columns full">
-            <div class="original light box">
-              {{ data.original }}
+			  
+			<!-- original text -->
+            <div ng-bind-html-unsafe="data.original"
+			  class="original light box">
             </div>
+			
           </div>
           <div class="small-12 medium-6 columns full">
           <div class="ctrl">
@@ -30,11 +33,16 @@
 			  class="button tiny secondary">French</a>
           </div>
           <div class="full">
-              <div ng-show="lang_check('eng')" class="translation english light box">
-                {{ data.translation.english }}
+			  <!-- english -->
+              <div ng-bind-html-unsafe="data.translation.english" 
+			  	ng-show="lang_check('eng')" 
+				class="translation english light box">
               </div>
-              <div ng-show="lang_check('fre')" class="translation french light box">
-                {{ data.translation.french }}
+			  
+			  <!-- french -->
+              <div ng-bind-html-unsafe="data.translation.french"
+			  	ng-show="lang_check('fre')" 
+				class="translation french light box">
               </div>
           </div>
           </div>
@@ -49,12 +57,19 @@
 			  class="button tiny secondary">Bibliography</a>
             </div>
             <div class="full">
-              <div ng-show="comment_check('body')" class="body light box">
-                {{ data.commentary.body }}
+				
+			  <!-- commentary body -->
+              <div ng-bind-html-unsafe="data.commentary.body" 
+			    ng-show="comment_check('body')" 
+				class="body light box">
+			  </div>
+
+			  <!-- commentary bibliography -->			  
+              <div ng-bind-html-unsafe="data.commentary.bibl" 
+			    ng-show="comment_check('bibl')"
+				class="bibliography light box">
               </div>
-              <div ng-show="comment_check('bibl')" class="bibliography light box">
-				{{ data.commentary.bibliography }}
-              </div>
+			  
             </div>
           </div>
         </div>
@@ -63,7 +78,7 @@
       <div class="small-12 medium-4 columns full imgs">
         <div class="box">
           <div class="slide" ng-repeat="(key, val) in data.img">
-            <a id="{{ key }}"><img src="{{ val.url }}"></a>
+            <a name="img-{{ key }}"><img src="{{ val.url }}"></a>
             <p class="caption">{{ val.caption }}</p>
         </div>
       </div>
@@ -74,6 +89,9 @@
     <script src="angular/app.js" type="text/javascript"></script>
     <script src="angular/controller.js" type="text/javascript"></script>
     <script src="angular/http.js" type="text/javascript"></script>
+	
+	<!-- Showdown -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/foundation/js/foundation.min.js"></script>
