@@ -11,7 +11,9 @@
 		overflow-y:scroll;
 	}
 }
-
+.button.secondary.select {
+	background-color: $secondary-button-bg-hover;
+}
 .ctrl {
 	position:absolute;
 	top:0;

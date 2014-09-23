@@ -19,14 +19,21 @@
           </div>
           <div class="small-12 medium-6 columns full">
           <div class="ctrl">
-            <a href="" class="button tiny secondary">English</a>
-            <a href="" class="button tiny secondary">French</a>
+            <a href="" 
+			  ng-click="lang_switch('eng')" 
+			  ng-class="{select: lang == 'eng'}" 
+			  class="button tiny secondary">English</a>
+			  
+            <a href="" 
+			  ng-click="lang_switch('fre')" 
+			  ng-class="{select: lang == 'fre'}" 
+			  class="button tiny secondary">French</a>
           </div>
           <div class="full">
-              <div class="translation english light box">
+              <div ng-show="lang_check('eng')" class="translation english light box">
                 {{ data.translation.english }}
               </div>
-              <div class="translation french light box">
+              <div ng-show="lang_check('fre')" class="translation french light box">
                 {{ data.translation.french }}
               </div>
           </div>
@@ -36,14 +43,17 @@
         <div class="row half">
           <div class="small-12 columns commentary full">
             <div class="ctrl">
-              <a href="" class="button tiny secondary">Bibliography</a>
+              <a href="" 
+			  ng-click="comment_switch()"
+			  ng-class="{select: comment == 'bibl' }"
+			  class="button tiny secondary">Bibliography</a>
             </div>
             <div class="full">
-              <div class="body light box">
+              <div ng-show="comment_check('body')" class="body light box">
                 {{ data.commentary.body }}
               </div>
-              <div class="bibliography light box">
-                  {{ data.commentary.bibliography }}
+              <div ng-show="comment_check('bibl')" class="bibliography light box">
+				{{ data.commentary.bibliography }}
               </div>
             </div>
           </div>
