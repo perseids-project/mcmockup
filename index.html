@@ -16,7 +16,7 @@
 			  
 			<!-- original text -->
             <div ng-bind-html-unsafe="original"
-			  class="original light box">
+			  class="original stain box">
             </div>
 			
           </div>
@@ -33,16 +33,17 @@
 			  class="button tiny secondary">French</a>
           </div>
           <div class="full">
+			  
 			  <!-- english -->
               <div ng-bind-html-unsafe="translation.english" 
 			  	ng-show="lang_check('eng')" 
-				class="translation english light box">
+				class="translation english stain box">
               </div>
 			  
 			  <!-- french -->
               <div ng-bind-html-unsafe="translation.french"
 			  	ng-show="lang_check('fre')" 
-				class="translation french light box">
+				class="translation french stain box">
               </div>
           </div>
           </div>
