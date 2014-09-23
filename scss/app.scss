@@ -1,6 +1,46 @@
 @import "settings";
 @import "foundation";
 
+@media only screen and ( min-width: 40.063em ) {
+	.wrapper {
+		height:100%;
+	}
+	.half {
+		height:50%;
+		overflow: -moz-scrollbars-vertical;
+		overflow-y:scroll;
+	}
+}
+
+.ctrl {
+	position:absolute;
+	top:0;
+	right:0;
+}
+
+.full{
+	height:100%;
+	overflow-y:scroll;
+}
+
+.columns.texts {
+	background-color:#F9F9F9;
+}
+.columns.imgs {
+	background-color:#111;
+}
+.box {
+	padding:.5em 1em;
+	padding-top:2.5rem;
+}
+.light {
+	background-color:#EFEFEF;
+}
+p.caption {
+	text-align:center;
+	color:#888;
+}
+
 // Or selectively include components
 // @import
 //   "foundation/components/accordion",
