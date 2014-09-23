@@ -15,7 +15,7 @@
           <div class="small-12 medium-6 columns full">
 			  
 			<!-- original text -->
-            <div ng-bind-html-unsafe="data.original"
+            <div ng-bind-html-unsafe="original"
 			  class="original light box">
             </div>
 			
@@ -34,13 +34,13 @@
           </div>
           <div class="full">
 			  <!-- english -->
-              <div ng-bind-html-unsafe="data.translation.english" 
+              <div ng-bind-html-unsafe="translation.english" 
 			  	ng-show="lang_check('eng')" 
 				class="translation english light box">
               </div>
 			  
 			  <!-- french -->
-              <div ng-bind-html-unsafe="data.translation.french"
+              <div ng-bind-html-unsafe="translation.french"
 			  	ng-show="lang_check('fre')" 
 				class="translation french light box">
               </div>
@@ -59,13 +59,13 @@
             <div class="full">
 				
 			  <!-- commentary body -->
-              <div ng-bind-html-unsafe="data.commentary.body" 
+              <div ng-bind-html-unsafe="commentary.body" 
 			    ng-show="comment_check('body')" 
 				class="body light box">
 			  </div>
 
 			  <!-- commentary bibliography -->			  
-              <div ng-bind-html-unsafe="data.commentary.bibl" 
+              <div ng-bind-html-unsafe="commentary.bibl" 
 			    ng-show="comment_check('bibl')"
 				class="bibliography light box">
               </div>
@@ -83,15 +83,14 @@
         </div>
       </div>
     </div>
+	<!-- Showdown -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
   
     <!-- Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" type="text/javascript"></script>
     <script src="angular/app.js" type="text/javascript"></script>
     <script src="angular/controller.js" type="text/javascript"></script>
     <script src="angular/http.js" type="text/javascript"></script>
-	
-	<!-- Showdown -->
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/foundation/js/foundation.min.js"></script>

@@ -2,38 +2,39 @@ app.service( 'http', function( $http, $q ) {
 
 	// Publicly accessible methods
 	return ({
-		gimme: gimme,
+		json: json,
+		md: md
 	});
 	
-	function gimme( scope ) {
+	function json( scope ) {
 		var request = client( 'GET', scope.data_src, {} );
 		return( request.then(
-			function( r ) { return md(r.data) },
+			function( r ) { return r.data },
 			function( r ) { return r.data.error }
 		));
 	}
 	
-	function md( data ) {
+	function md( url, scope ) {
+		var request = client( 'GET', url, {}, 'text/x-markdown; charset=UTF-8' );
+		return( request.then(
+			function( r ) { return toHtml(r.data) },
+			function( r ) { console.log( 'error' )}
+		));
+	}
+	
+	function toHtml( md ) {
 		var conv = new Showdown.converter();
-		
-		// What data needs conversion to markdown?
-		data.commentary.body = conv.makeHtml( data.commentary.body );
-		data.commentary.bibl = conv.makeHtml( data.commentary.bibl );
-		data.original = conv.makeHtml( data.original );
-		for ( var lang in data.translation ) {
-			data.translation[lang] = conv.makeHtml( data.translation[lang] );
-		}
-		
-		return data;
+		return conv.makeHtml( md );
 	}
 		
 	// JackSON wrapper
-	function client( method, url, data ) {
+	function client( method, url, data, ctype ) {
+		ctype = ( ctype == undefined ) ? 'application/json' : ctype;
 		return $http({
 			method: method.toUpperCase(),
 			url: url,
 		    headers: {
-		        'Content-Type': 'application/json'
+		        'Content-Type': ctype
 		    },
 			data: wrap( data )
 		});
