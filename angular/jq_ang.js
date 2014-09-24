@@ -9,7 +9,7 @@ var jq_ang = function() {
   this.click_start = function(elem) {
     $('a.inttext').on('touchstart click', function(e) {
       var href = $(this).attr('href').substring(1);
-      var color = $(this).css('background-color');
+      var color = $(this).css('color');
 	  var targ = $('a.inttarg[name="'+href+'"]');
 	  var current = targ.css('background-color');	  
 	  var i = 0;

@@ -68,8 +68,8 @@
 .columns.imgs {
   background-color:#111;
 }
-.columns.imgs img{
-  padding-top:2rem;
+.columns.imgs a{
+  margin-top:2rem;
 }
 .box {
   padding:.5rem 1rem;
@@ -92,14 +92,12 @@
   margin-bottom:6rem;
 }
 a.inttext {
-  color:#111;
-  background-color:#FFAAAA;
-  padding:0 .25rem;
+  color:#FF6666;
+  font-weight:bold;
 }
 a.intimg {
-  color:#111;
-  background-color:#FFFFAA;
-  padding:0 .25rem;
+  color: #B30697;
+  font-weight:bold;
 }
 a.inttarg {
   color:#111;
