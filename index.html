@@ -3,98 +3,103 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation</title>
+    <title>Digital Milliet</title>
     <link rel="stylesheet" href="stylesheets/app.css" />
     <script src="bower_components/modernizr/modernizr.js"></script>
   </head>
   <body ng-app="app" ng-controller="controller">
-    
-    <div class="row wrapper">
-      <div class="small-12 medium-8 columns full texts">
-        <div class="row half">
-          <div class="small-12 medium-6 columns full">
-			  
-			<!-- original text -->
-            <div ng-bind-html-unsafe="original"
-			  class="original stain box">
-            </div>
-			
-          </div>
-          <div class="small-12 medium-6 columns full">
+  <div class="row wrapper">
+    <div class="small-12 medium-8 columns full texts">
+      <div class="row half">
+        <div class="small-12 medium-6 columns full">
+          
+        <!-- original text -->
+        <div ng-bind-html-unsafe="original"
+          class="original stain box" scrollto>
+        </div>
+        </div>
+        <div class="small-12 medium-6 columns full">
           <div class="ctrl">
             <a href="" 
-			  ng-click="lang_switch('eng')" 
-			  ng-class="{select: lang == 'eng'}" 
-			  class="button tiny secondary">English</a>
-			  
+              ng-click="lang_switch('eng')" 
+              ng-class="{select: lang == 'eng'}" 
+              class="button tiny secondary">English</a>
+              
             <a href="" 
-			  ng-click="lang_switch('fre')" 
-			  ng-class="{select: lang == 'fre'}" 
-			  class="button tiny secondary">French</a>
+              ng-click="lang_switch('fre')" 
+              ng-class="{select: lang == 'fre'}" 
+              class="button tiny secondary">French</a>
           </div>
-          <div class="full">
-			  
-			  <!-- english -->
-              <div ng-bind-html-unsafe="translation.english" 
-			  	ng-show="lang_check('eng')" 
-				class="translation english stain box">
-              </div>
-			  
-			  <!-- french -->
-              <div ng-bind-html-unsafe="translation.french"
-			  	ng-show="lang_check('fre')" 
-				class="translation french stain box">
-              </div>
+        <div class="full">
+          <!-- english -->
+          <div ng-bind-html-unsafe="translation.english" 
+            ng-show="lang_check('eng')" 
+            class="translation english stain box">
           </div>
+          <!-- french -->
+          <div ng-bind-html-unsafe="translation.french"
+            ng-show="lang_check('fre')" 
+            class="translation french stain box">
           </div>
-        </div>
-      
-        <div class="row half">
-          <div class="small-12 columns commentary full">
-            <div class="ctrl">
-              <a href="" 
-			  ng-click="comment_switch()"
-			  ng-class="{select: comment == 'bibl' }"
-			  class="button tiny secondary">Bibliography</a>
-            </div>
-            <div class="full">
-				
-			  <!-- commentary body -->
-              <div ng-bind-html-unsafe="commentary.body" 
-			    ng-show="comment_check('body')" 
-				class="body light box">
-			  </div>
-
-			  <!-- commentary bibliography -->			  
-              <div ng-bind-html-unsafe="commentary.bibl" 
-			    ng-show="comment_check('bibl')"
-				class="bibliography light box">
-              </div>
-			  
-            </div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="small-12 medium-4 columns full imgs">
-        <div class="box">
-          <div class="slide" ng-repeat="(key, val) in data.img">
-            <a name="img-{{ key }}"><img src="{{ val.url }}"></a>
-            <p class="caption">{{ val.caption }}</p>
         </div>
       </div>
     </div>
-	<!-- Showdown -->
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
+    
+    <div class="row half">
+      <div class="small-12 columns commentary full">
+        <div class="ctrl">
+          <a href="" 
+          ng-click="comment_switch()"
+          ng-class="{select: comment == 'bibl' }"
+          class="button tiny secondary">Bibliography</a>
+        </div>
+        <div class="full">
+          
+          <!-- commentary body -->
+          <div ng-bind-html-unsafe="commentary.body" 
+          ng-show="comment_check('body')" 
+          class="body light box">
+          </div>
+        
+          <!-- commentary bibliography -->        
+          <div ng-bind-html-unsafe="commentary.bibl" 
+          ng-show="comment_check('bibl')"
+          class="bibliography light box">
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
   
-    <!-- Angular -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" type="text/javascript"></script>
-    <script src="angular/app.js" type="text/javascript"></script>
-    <script src="angular/controller.js" type="text/javascript"></script>
-    <script src="angular/http.js" type="text/javascript"></script>
-
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/foundation/js/foundation.min.js"></script>
-    <script src="js/app.js"></script>
+  <div class="small-12 medium-4 columns full imgs">
+    <div class="box">
+      <div class="slide" ng-repeat="(key, val) in data.img">
+      <a name="img-{{ key }}" href="{{ val.url }}" target="_blank"><img src="{{ val.url }}"></a>
+      <div class="group">
+        <div class="caption">{{ val.caption }}</div>
+        <div class="caption">{{ val.place }}</div>
+        <div class="caption">{{ val.time }}</div>
+        <div class="caption">{{ val.rights }}</div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- Showdown -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
+      
+  <!-- Angular -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" type="text/javascript"></script>
+  <script src="angular/app.js" type="text/javascript"></script>
+  <script src="angular/jq_ang.js" type="text/javascript"></script>
+  <script src="angular/directive.js" type="text/javascript"></script>
+  <script src="angular/controller.js" type="text/javascript"></script>
+  <script src="angular/http.js" type="text/javascript"></script>
+   
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/foundation/js/foundation.min.js"></script>
+  <script src="js/app.js"></script>
   </body>
 </html>

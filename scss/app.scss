@@ -40,48 +40,73 @@
 //   "foundation/components/visibility";
 
 @media only screen and ( min-width: 40.063em ) {
-	.wrapper {
-		height:100%;
-	}
-	.half {
-		height:50%;
-		overflow: -moz-scrollbars-vertical;
-		overflow-y:scroll;
-	}
-	.commentary .box {
-		padding:.5rem 4rem;
-		padding-top:2.5rem;
-	}
-	.translation.english {
-		margin-left:.1rem;
-	}
+  .wrapper {
+    height:100%;
+  }
+  .half {
+    height:50%;
+    overflow: -moz-scrollbars-vertical;
+    overflow-y:scroll;
+  }
+  .commentary .box {
+    padding:.5rem 4rem;
+    padding-top:2.5rem;
+  }
+  .translation.english {
+    margin-left:.1rem;
+  }
 }
 .button.secondary.select {
-	background-color: $secondary-button-bg-hover;
+  background-color: $secondary-button-bg-hover;
 }
 .ctrl {
-	position:absolute;
-	top:0;
-	right:0;
+  position:absolute;
+  top:0;
+  right:0;
 }
 .full{
-	height:100%;
-	overflow-y:scroll;
+  height:100%;
+  overflow-y:scroll;
 }
 .columns.imgs {
-	background-color:#111;
+  background-color:#111;
+}
+.columns.imgs img{
+  padding-top:2rem;
 }
 .box {
-	padding:.5rem 1rem;
-	padding-top:2.5rem;
+  padding:.5rem 1rem;
+  padding-top:2.5rem;
 }
 .light {
-	background-color:#EFEFEF;
+  background-color:#EFEFEF;
 }
-p.caption {
-	text-align:center;
-	color:#888;
+.caption {
+  font-size:.8rem;
+  width: 100%;
+  text-align:right;
+  color:#888;
 }
 .stain {
-	background-color:#DDD;
+  background-color:#DDD;
+}
+.group {
+  margin-top:.5rem;
+  margin-bottom:6rem;
+}
+a.inttext {
+  color:#111;
+  background-color:#FFAAAA;
+  padding:0 .25rem;
+}
+a.intimg {
+  color:#111;
+  background-color:#FFFFAA;
+  padding:0 .25rem;
+}
+a.inttarg {
+  color:#111;
+}
+.source {
+  margin-bottom:1rem;
 }

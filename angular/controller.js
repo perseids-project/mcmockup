@@ -16,6 +16,7 @@ app.controller("controller", function( $scope, http ){
     $scope.data_src = "json/data.json";
 	$scope.data = http.json( $scope ).then(
 		function( data ) {
+			// Bind the retrieved data.
 			$scope.original = http.md( data.original, $scope );
 			$scope.translation.english = http.md( data.translation.english, $scope );
 			$scope.translation.french = http.md( data.translation.french, $scope );
