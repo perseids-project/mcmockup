@@ -4,7 +4,7 @@ app.directive("scrollto", function( $timeout ) {
 	  $timeout( function () { 
         var jq = new jq_ang();
         jq.click_start( element );
-      });
+      }, 1000, false );
     }
   };
  });
