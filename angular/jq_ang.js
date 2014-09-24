@@ -10,7 +10,23 @@ var jq_ang = function() {
     $('a.inttext').on('touchstart click', function(e) {
       var href = $(this).attr('href').substring(1);
       var color = $(this).css('background-color');
-      $('a.inttarg[name="'+href+'"]').css('background-color', color);
+	  var targ = $('a.inttarg[name="'+href+'"]');
+	  var current = targ.css('background-color');	  
+	  var i = 0;
+	  var max = 2;
+	  var timer = null;
+	  timer = setInterval(function () {
+	    if (i%2==0) {
+		  targ.css('background-color', color );
+	    }
+	    else {
+		  targ.css('background-color', current );
+	    }
+	    i++;
+	    if ( i > max ) {
+ 		  clearInterval( timer );
+	    }
+	  }, 400);
     });
   }
 }
