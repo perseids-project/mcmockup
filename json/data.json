@@ -11,23 +11,11 @@
 			"place": "Agiai/Vergina",
 			"time": "4th century B.C."
 		},
-		"serapis": {
-			"url": "img/Serapis-Priest-2d.C.AD..jpg",
-			"caption": "portrait of a priest of Serapis",
-			"time": "2nd century A.D.",
-			"rights": "©Trustees of the British Museum"
-		},
 		"euthymides": {
 			"url": "img/euthymides-never-euphronios-p91-medium.jpg",
 			"caption": "Euthymides",
 			"place": "Munich",
 			"rights": "Staatliche Antikensammlungen 2307"
-		},
-		"hawara": {
-			"url": "img/hawara-mummy-portrait-1st.c. AD.jpg",
-			"caption": "mummy portrait from Hawara",
-			"time": "2nd century A.D.",
-			"rights": "©Trustees of the British Museum"
 		}
 	},
 	"commentary": {
